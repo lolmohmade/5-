@@ -1,0 +1,6 @@
+{
+  "name": "Android Setup Checklist",
+  "description": "An interactive checklist for Android development environment requirements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

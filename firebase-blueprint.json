@@ -1,0 +1,36 @@
+{
+  "entities": {
+    "Admin": {
+      "title": "Admin User",
+      "description": "Users with access to the control panel",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["email"]
+    },
+    "GlobalSetting": {
+      "title": "Global Setting",
+      "description": "App-wide configuration",
+      "type": "object",
+      "properties": {
+        "key": { "type": "string" },
+        "value": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["key", "value"]
+    }
+  },
+  "firestore": {
+    "/admins/{adminId}": {
+      "schema": "Admin",
+      "description": "List of authorized administrators"
+    },
+    "/settings/{settingId}": {
+      "schema": "GlobalSetting",
+      "description": "App-wide settings and overrides"
+    }
+  }
+}
